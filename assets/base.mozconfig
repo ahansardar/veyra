@@ -12,6 +12,12 @@ ac_add_options --disable-debug-symbols
 ac_add_options --disable-default-browser-agent
 ac_add_options --disable-tests
 ac_add_options --disable-updater
+# The wasm2c_sandbox_compiler host tool fails to link against the vendored
+# wabt library in this toolchain (undefined symbols in libwabt). WASM
+# sandboxing of codec libraries is a defense-in-depth hardening feature,
+# not required for a working browser; Mozilla's own build error suggests
+# this exact flag as the fix.
+ac_add_options --without-wasm-sandboxed-libraries
 # ac_add_options --enable-hardening
 # ac_add_options --enable-jxl
 # ac_add_options --enable-optimize
