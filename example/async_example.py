@@ -2,7 +2,7 @@
 Async version of the example — useful for scraping multiple pages concurrently.
 
 Install deps:
-    pip install cloverlabs-veyra
+    pip install veyra-browser
     python -m veyra fetch
 """
 

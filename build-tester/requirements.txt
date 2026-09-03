@@ -1,4 +1,4 @@
-cloverlabs-veyra
+veyra-browser
 # 1.61 sent viewport.isMobile in Browser.setDefaultViewport, which this
 # juggler's protocol schema rejected; the schema now accepts it, so the cap
 # moves up rather than away. Matches the cap in pythonlib/pyproject.toml.

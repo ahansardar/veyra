@@ -57,7 +57,7 @@ PYTHON=".venv/bin/python"
 PIP=".venv/bin/pip"
 
 echo "==> Installing veyra from local source + playwright..."
-$PIP uninstall -y cloverlabs-veyra >/dev/null 2>&1 || true
+$PIP uninstall -y veyra-browser >/dev/null 2>&1 || true
 $PIP install -q -e ../pythonlib playwright
 
 echo "==> Running build tester..."

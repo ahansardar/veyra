@@ -83,7 +83,7 @@ rm -rf ../pythonlib/dist
 (cd ../pythonlib && "$SCRIPT_DIR/.venv/bin/python" -m build --wheel -o dist >/dev/null)
 
 echo "==> Installing veyra from local wheel..."
-$PIP uninstall -y veyra cloverlabs-veyra >/dev/null 2>&1 || true
+$PIP uninstall -y veyra veyra-browser >/dev/null 2>&1 || true
 $PIP install -q --force-reinstall ../pythonlib/dist/*.whl
 
 # Locate locally compiled binary

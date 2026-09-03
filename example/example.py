@@ -1,8 +1,8 @@
 """
-Quick example to test cloverlabs-veyra.
+Quick example to test veyra-browser.
 
 Install deps:
-    pip install cloverlabs-veyra
+    pip install veyra-browser
     python -m veyra fetch
 """
 

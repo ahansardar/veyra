@@ -3,7 +3,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "veyra"
+name = "veyra-browser"
 version = "0.5.6b1"
 description = "Wrapper around Playwright to help launch Veyra"
 authors = ["ahansardar <website.ties@gmail.com>"]
@@ -11,6 +11,7 @@ license = "MIT"
 repository = "https://github.com/ahansardar/veyra"
 homepage = "https://github.com/ahansardar/veyra"
 readme = "README.md"
+packages = [{ include = "veyra" }]
 keywords = [
     "client",
     "fingerprint",
