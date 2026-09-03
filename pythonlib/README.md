@@ -75,10 +75,6 @@ veyra gui
 
 ## CLI Mananger
 
-#### Demonstration
-
-https://github.com/user-attachments/assets/992b1830-6b21-4024-9165-728854df1473
-
 <details>
 <summary>See help message</summary>
 
