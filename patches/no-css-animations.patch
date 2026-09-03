@@ -43,13 +43,11 @@ diff --git a/dom/animation/moz.build b/dom/animation/moz.build
 index e1599cf4cf..bd58e461ff 100644
 --- a/dom/animation/moz.build
 +++ b/dom/animation/moz.build
-@@ -67,8 +67,9 @@ UNIFIED_SOURCES += [
- ]
-
- LOCAL_INCLUDES += [
-     "/dom/base",
+@@ -71,6 +71,7 @@
      "/layout/base",
      "/layout/painting",
      "/layout/style",
 +    "/veyracfg",
  ]
+ 
+ include("/ipc/chromium/chromium-config.mozbuild")
