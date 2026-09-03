@@ -2,10 +2,8 @@ FROM ubuntu:latest
 
 WORKDIR /app
 
-# Copy the current directory into the container at /app
-COPY . /app
-
-# Install necessary packages
+# Install necessary packages (before COPY so this layer stays cached across
+# repo edits — only the Firefox fetch/bootstrap below needs to rerun then)
 RUN apt-get update && apt-get install -y \
     # Mach build tools
     build-essential make msitools wget unzip rustc \
@@ -24,6 +22,9 @@ RUN apt-get update && apt-get install -y \
 
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Copy the current directory into the container at /app
+COPY . /app
 
 # Fetch Firefox & apply initial patches
 RUN make setup-minimal && \
