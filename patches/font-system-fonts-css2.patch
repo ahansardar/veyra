@@ -55,14 +55,21 @@ Bug: daijro/camoufox#598 (sibling of font-system-ui.patch)
 
 --- a/widget/gtk/moz.build
 +++ b/widget/gtk/moz.build
-@@ -155,6 +155,7 @@
+@@ -155,13 +155,14 @@
  FINAL_LIBRARY = "xul"
 
  LOCAL_INCLUDES += [
-+    "/veyracfg",
      "/layout/base",
      "/layout/forms",
      "/layout/generic",
+     "/layout/xul",
+     "/other-licenses/atk-1.0",
+     "/third_party/cups/include",
++    "/veyracfg",
+     "/widget",
+     "/widget/headless",
+     "/widget/x11",
+ ]
 --- a/widget/gtk/nsLookAndFeel.cpp
 +++ b/widget/gtk/nsLookAndFeel.cpp
 @@ -34,6 +34,7 @@
@@ -124,14 +131,17 @@ Bug: daijro/camoufox#598 (sibling of font-system-ui.patch)
      case FontID::MozPullDownMenu:  // css3
 --- a/layout/base/moz.build
 +++ b/layout/base/moz.build
-@@ -146,6 +146,7 @@
+@@ -146,9 +146,10 @@
      "../tables",
      "../xul",
      "../xul/tree/",
-+    "/veyracfg",
      "/docshell/base",
      "/dom/base",
      "/dom/html",
+     "/dom/svg",
+     "/dom/xul",
++    "/veyracfg",
+ ]
 --- a/layout/base/nsLayoutUtils.cpp
 +++ b/layout/base/nsLayoutUtils.cpp
 @@ -6,6 +6,7 @@
