@@ -145,7 +145,7 @@ def _get_library_version() -> str:
     from importlib.metadata import version
 
     try:
-        return version('veyra')
+        return version('veyra-browser')
     except Exception:
         return '0.0.0'
 

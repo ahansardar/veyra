@@ -3,7 +3,6 @@
 <h4 align="center">A Firefox-based browser engineered to run undetected — built for scraping, automation, and AI agents.</h4>
 
 <div align="center">
-  <a href="https://pepy.tech/projects/veyra-browser"><img src="https://static.pepy.tech/personalized-badge/veyra-browser?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" alt="Total Downloads"></a>
   <h4>⚠️ Under active development — not yet recommended for stable production use. ⚠️</h4>
 </div>
 

@@ -494,7 +494,7 @@ class Backend(QObject):
 
     @Property(str, notify=infoChanged)
     def libraryVersion(self):
-        return self._pkg_version('veyra')
+        return self._pkg_version('veyra-browser')
 
     @Property(str, notify=infoChanged)
     def playwrightVersion(self):

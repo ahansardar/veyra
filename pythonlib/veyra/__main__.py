@@ -864,7 +864,7 @@ class VersionInfo:
         Add installed package version rows to the table
         """
         self._header("Python Packages")
-        self._pkg("Veyra", "veyra")
+        self._pkg("Veyra", "veyra-browser")
         self._pkg("Browserforge", "browserforge")
         self._pkg("Apify Fingerprints", "apify_fingerprint_datapoints")
         self._pkg("Playwright", "playwright")
