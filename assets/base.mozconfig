@@ -46,7 +46,7 @@ mk_add_options MOZ_CRASHREPORTER=0
 mk_add_options MOZ_DATA_REPORTING=0
 mk_add_options MOZ_SERVICES_HEALTHREPORT=0
 mk_add_options MOZ_TELEMETRY_REPORTING=0
-mk_add_options MOZ_INSTALLER=0
+mk_add_options MOZ_INSTALLER=1
 mk_add_options MOZ_AUTOMATION_INSTALLER=0
 
 # Cap parallel compile/link jobs well below nproc (20) to bound peak RAM.
