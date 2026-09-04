@@ -123,7 +123,7 @@ def geoip_allowed() -> None:
     """
     if not ALLOW_GEOIP:
         raise NotInstalledGeoIPExtra(
-            'Please install the geoip extra to use this feature: pip install veyra[geoip]'
+            'Please install the geoip extra to use this feature: pip install veyra-browser[geoip]'
         )
 
 

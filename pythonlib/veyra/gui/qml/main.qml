@@ -920,7 +920,7 @@ ApplicationWindow {
 
                                 T {
                                     Layout.alignment: Qt.AlignHCenter
-                                    text: "Run: pip install veyra[geoip]"
+                                    text: "Run: pip install veyra-browser[geoip]"
                                     color: c.muted
                                     font.family: root.fontMain
                                 }
