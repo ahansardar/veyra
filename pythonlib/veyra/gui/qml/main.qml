@@ -12,7 +12,6 @@ ApplicationWindow {
     title: "Veyra Manager"
     color: c.bg
 
-    FontLoader { id: segoe; source: "../assets/SegUIVar.ttf" }
     FontLoader { id: mdl2; source: "../assets/segmdl2.ttf" }
 
     // 4pt spacing scale
@@ -27,23 +26,30 @@ ApplicationWindow {
     readonly property int colW: Math.round(100 * scale)
     readonly property int verColW: Math.round(70 * scale)
     readonly property int dateColW: Math.round(90 * scale)
-    readonly property string fontMain: segoe.name
+    // Shape language: rounder than the sharp 4px Fluent-style corners this
+    // GUI used before, and kept independent of the spacing scale above.
+    readonly property int radiusSm: Math.round(6 * scale)
+    readonly property int radiusMd: Math.round(10 * scale)
+    readonly property string fontMain: "Inter"
     readonly property string fontIcon: mdl2.name
 
     property string geoipDlgSource: ""
 
     QtObject {
         id: c
-        readonly property color bg: "#181818"
-        readonly property color fg: "#1f1f1f"
-        readonly property color raised: "#282828"
-        readonly property color border: "#383838"
-        readonly property color text: "#ffffff"
-        readonly property color muted: "#a0a0a0"
-        readonly property color dim: "#606060"
-        readonly property color accent: "#569cd6"
-        readonly property color ok: "#6b9e7e"
-        readonly property color err: "#f14c4c"
+        // Colors lifted directly from Veyra's actual logo mark (the slate/
+        // blue/sky/teal facets), not an approximation of it.
+        readonly property color bg: "#0f172a"
+        readonly property color fg: "#1e293b"
+        readonly property color raised: "#334155"
+        readonly property color border: "#475569"
+        readonly property color text: "#f1f5f9"
+        readonly property color muted: "#94a3b8"
+        readonly property color dim: "#64748b"
+        readonly property color accent: "#0ea5e9"
+        readonly property color accent2: "#2563eb"
+        readonly property color ok: "#14b8a6"
+        readonly property color err: "#f87171"
     }
 
     // Primitives
@@ -98,7 +104,7 @@ ApplicationWindow {
 
         width: _row.implicitWidth + s3
         height: row - s2
-        radius: s1
+        radius: radiusSm
         color: on && _ma.containsMouse ? c.raised : "transparent"
         border.color: c.border
         border.width: 1
@@ -139,7 +145,7 @@ ApplicationWindow {
 
         width: lbl.width + s3
         height: row - s3
-        radius: s1
+        radius: radiusSm
         color: Qt.rgba(accent.r, accent.g, accent.b, 0.15)
         border.color: accent
         border.width: 1
@@ -197,7 +203,7 @@ ApplicationWindow {
 
         width: Math.round(160 * scale)
         height: row - s2
-        radius: s1
+        radius: radiusSm
         color: c.raised
         border.color: inp.activeFocus ? c.accent : c.border
         border.width: 1
@@ -228,7 +234,7 @@ ApplicationWindow {
         property bool active: false
 
         height: s1
-        radius: s1 / 2
+        radius: radiusSm / 2
         color: c.raised
 
         Rectangle {
@@ -261,7 +267,7 @@ ApplicationWindow {
 
         background: Rectangle {
             color: c.raised
-            radius: s1
+            radius: radiusSm
             border.color: c.border
             border.width: 1
         }
@@ -384,7 +390,7 @@ ApplicationWindow {
         height: dlgContent.height + s4 * 2
         color: c.fg
         border.color: c.border
-        radius: s2
+        radius: radiusMd
         z: 101
 
         Column {
@@ -515,27 +521,24 @@ ApplicationWindow {
                 anchors.leftMargin: s3
                 anchors.verticalCenter: parent.verticalCenter
 
+                spacing: s2
+
                 Repeater {
                     model: ["Browsers", "GeoIP", "Info"]
 
                     Rectangle {
                         width: tabLbl.width + s4 * 2
-                        height: row
-                        color: "transparent"
+                        height: row - s2
+                        anchors.verticalCenter: parent.verticalCenter
+                        radius: radiusMd
+                        color: tabs.currentIndex === index ? Qt.rgba(c.accent.r, c.accent.g, c.accent.b, 0.16) : "transparent"
 
                         T {
                             id: tabLbl
                             anchors.centerIn: parent
                             text: modelData
+                            font.weight: tabs.currentIndex === index ? Font.DemiBold : Font.Normal
                             color: tabs.currentIndex === index ? c.accent : c.muted
-                        }
-
-                        Rectangle {
-                            anchors.bottom: parent.bottom
-                            width: parent.width
-                            height: s1 / 2
-                            color: c.accent
-                            visible: tabs.currentIndex === index
                         }
 
                         MouseArea {
@@ -705,7 +708,7 @@ ApplicationWindow {
                                 Rectangle {
                                     width: s3
                                     height: s3
-                                    radius: s1
+                                    radius: radiusSm
                                     color: "transparent"
                                     border.color: c.dim
                                     border.width: 1
@@ -751,7 +754,7 @@ ApplicationWindow {
                                 policy: vList.contentHeight > vList.height ? ScrollBar.AsNeeded : ScrollBar.AlwaysOff
                                 contentItem: Rectangle {
                                     implicitWidth: s2
-                                    radius: s1
+                                    radius: radiusSm
                                     color: c.border
                                 }
                             }
@@ -1134,7 +1137,7 @@ ApplicationWindow {
                         height: Math.round(140 * scale)
                         color: c.fg
                         border.color: c.border
-                        radius: s2
+                        radius: radiusMd
                         z: 101
 
                         ColumnLayout {
@@ -1297,13 +1300,13 @@ ApplicationWindow {
                                 y: scaleSlider.topPadding + scaleSlider.availableHeight / 2 - s1 / 2
                                 width: scaleSlider.availableWidth
                                 height: s1
-                                radius: s1 / 2
+                                radius: radiusSm / 2
                                 color: c.raised
 
                                 Rectangle {
                                     width: scaleSlider.visualPosition * parent.width
                                     height: s1
-                                    radius: s1 / 2
+                                    radius: radiusSm / 2
                                     color: c.accent
                                 }
                             }
@@ -1313,7 +1316,7 @@ ApplicationWindow {
                                 y: scaleSlider.topPadding + scaleSlider.availableHeight / 2 - height / 2
                                 width: s4
                                 height: s4
-                                radius: s2
+                                radius: radiusMd
                                 color: scaleSlider.pressed ? c.accent : c.text
                             }
                         }
