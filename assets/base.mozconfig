@@ -49,4 +49,10 @@ mk_add_options MOZ_TELEMETRY_REPORTING=0
 mk_add_options MOZ_INSTALLER=0
 mk_add_options MOZ_AUTOMATION_INSTALLER=0
 
+# Cap parallel compile/link jobs well below nproc (20) to bound peak RAM.
+# Rust crates like `style` with codegen-units=1 can need several GB per job;
+# unconstrained parallelism on a 20-core host is what OOM-killed prior builds.
+# ~2GB/job is a safe rule of thumb for Firefox release builds.
+mk_add_options MOZ_PARALLEL_BUILD=8
+
 # ac_add_options --enable-lto=cross
