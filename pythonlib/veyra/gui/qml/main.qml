@@ -1204,9 +1204,9 @@ ApplicationWindow {
                         Muted { text: "Last Sync" }
                         T { text: backend.lastSyncTime || "Never" }
 
-                        Muted { text: "Website" }
+                        Muted { text: "Repository" }
                         T {
-                            text: "<a href='https://veyra.example.com' style='color:" + c.accent + "'>veyra.example.com</a>"
+                            text: "<a href='https://github.com/ahansardar/veyra' style='color:" + c.accent + "'>github.com/ahansardar/veyra</a>"
                             textFormat: Text.RichText
                             onLinkActivated: link => Qt.openUrlExternally(link)
                         }

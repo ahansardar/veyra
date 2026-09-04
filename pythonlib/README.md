@@ -7,7 +7,7 @@
 </div>
 
 > [!NOTE]
-> All the the latest documentation is avaliable [here](https://veyra.example.com/python).
+> The latest documentation lives in this repository — see [github.com/ahansardar/veyra](https://github.com/ahansardar/veyra).
 
 ---
 
@@ -297,4 +297,4 @@ Launch a remote Playwright server.
 
 ## Usage
 
-All of the latest stable documentation is avaliable at [veyra.example.com/python](https://veyra.example.com/python).
+All of the latest stable documentation lives in this repository — see [github.com/ahansardar/veyra](https://github.com/ahansardar/veyra).

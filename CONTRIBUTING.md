@@ -91,4 +91,4 @@ Please search existing issues before opening a new one. Include:
 
 ## Questions
 
-For usage questions, check the [documentation](https://veyra.example.com) first. For anything else, open an issue.
+For usage questions, check the [repository](https://github.com/ahansardar/veyra) first. For anything else, open an issue.
