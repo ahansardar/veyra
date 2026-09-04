@@ -1,5 +1,5 @@
 """
-Verify `forceScopeAccess` reaches closed shadow roots (daijro/camoufox#628).
+Verify `forceScopeAccess` reaches closed shadow roots.
 
 patches/shadow-root-bypass.patch adds `Element.shadowRootUnl` to the WebIDL,
 gated on Func="Document::IsCallerChromeOrAddon". That gate tests the *caller*,

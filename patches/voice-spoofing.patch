@@ -54,7 +54,7 @@ index e5a1353d6b..4a4a5b080b 100644
 +  // unusable list fall through to the host's speech-dispatcher backend, which
 +  // registers every native voice -- 14805 espeak-ng entries on a stock Linux
 +  // box -- under a fingerprint claiming macOS or Windows
-+  // (daijro/camoufox#731). An empty spoofed list must mean "no voices", never
++  //. An empty spoofed list must mean "no voices", never
 +  // "all of the host's".
 +  if (MaskConfig::GetBool("voices:blockIfNotDefined") ||
 +      MaskConfig::MVoices().has_value()) {

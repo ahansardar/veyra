@@ -488,7 +488,7 @@ def attach_no_viewport_default(target: Any) -> Any:
     the content window to become 1280x720 (TargetRegistry.updateViewportSize).
     When Veyra is pinning the window to a spoofed size, that request can
     never be satisfied, and awaitViewportDimensions has no timeout -- so the
-    second new_page() hangs forever (daijro/camoufox#666).
+    second new_page() hangs forever.
 
     With no_viewport, Juggler measures the window instead of resizing it, so the
     handshake resolves immediately and the page reports the spoofed dimensions

@@ -1,9 +1,9 @@
 """
 Tests for veyra.display -- probing the host monitor in CSS pixels.
 
-Guards daijro/camoufox#425: with Windows display scaling enabled, screeninfo
-reports physical pixels while Firefox lays windows out in CSS pixels, so the
-browser window opened larger than the screen.
+Guards against a regression where, with Windows display scaling enabled,
+screeninfo reports physical pixels while Firefox lays windows out in CSS
+pixels, so the browser window opened larger than the screen.
 
 Run with:
     cd pythonlib && python -m pytest tests/test_display.py -v

@@ -6,7 +6,7 @@ per-monitor DPI aware and therefore reports **physical** pixels. Where Windows
 display scaling is enabled the two differ by the scale factor: a 1920x1080 panel
 at 150% is only 1280x720 CSS px. Deriving a window size from the physical
 numbers overshoots the screen by that factor, so the window opens partly
-off-screen (daijro/camoufox#425).
+off-screen.
 
 macOS (`NSScreen.frame`) and X11 (xrandr) already report CSS pixels, so scaling
 only ever applies on Windows.

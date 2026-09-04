@@ -1,7 +1,7 @@
 # Veyra-specific: page.route() must not change what a request looks like on the wire.
 #
 # Enabling request interception used to alter every request the page made, which let anti-bot
-# services tell an intercepted page apart from a normal one (daijro/camoufox#428, #271):
+# services tell an intercepted page apart from a normal one:
 #
 #   - Playwright pairs every setRequestInterception() with setCacheDisabled(true), and the load
 #     flags behind that made necko attach "Pragma: no-cache" / "Cache-Control: no-cache", which

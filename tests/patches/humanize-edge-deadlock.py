@@ -1,5 +1,5 @@
 """
-Verify a humanized mousemove toward a viewport edge does not deadlock (daijro/camoufox#225).
+Verify a humanized mousemove toward a viewport edge does not deadlock.
 
 Veyra dispatches synthesized mouse events inside `activateAndRun()`
 (additions/juggler/TargetRegistry.js), which serializes every dispatch on a

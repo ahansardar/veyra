@@ -51,8 +51,6 @@ probe duration as a probabilistic headless signal, so we don't want to
 re-parse VEYRA_CONFIG on every call. The config is set at process start
 and never changes, so a single classification per process is safe.
 
-Bug: daijro/camoufox#598 (sibling of font-system-ui.patch)
-
 --- a/widget/gtk/moz.build
 +++ b/widget/gtk/moz.build
 @@ -168,6 +168,7 @@

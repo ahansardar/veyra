@@ -6,8 +6,8 @@ Veyra dispatches synthesized mouse events inside `activateAndRun()`
 *process-global* promise chain. Each dispatch awaits a `hit-renderer` ack from
 the content process. If an ack never arrives, the callback never returns, the
 global chain never advances, and every later input event in the process hangs
-behind it forever. (Same activation-chain machinery as daijro/camoufox#225, but
-a distinct trigger.)
+behind it forever. (Same activation-chain machinery as the edge-deadlock case,
+but a distinct trigger.)
 
 The trigger here is a mousemove whose destination rounds to the pixel the
 pointer is ALREADY on. The widget coalesces it away and dispatches no

@@ -110,7 +110,7 @@ def NewBrowser(
         from_options = launch_options(headless=headless, debug=debug, **kwargs)
 
     # Playwright's default viewport deadlocks Juggler when the window is spoofed
-    # to a different size (daijro/camoufox#666), so default to no_viewport.
+    # to a different size, so default to no_viewport.
     no_viewport_default = spoofs_window_dimensions(from_options)
 
     # Persistent context

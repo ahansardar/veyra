@@ -1,5 +1,5 @@
 """
-Verify humanize=True produces a native cursor trajectory (daijro/camoufox#677).
+Verify humanize=True produces a native cursor trajectory.
 
 Veyra's cursor humanization has a single call site: the `mousemove` branch of
 `sendEvents()` in additions/juggler/protocol/PageHandler.js, which calls

@@ -103,7 +103,7 @@ def test_unknown_os_falls_back_to_macos():
     assert len(_generate_random_voice_subset("plan9", "en-US")) > 0
 
 
-# ── Fail-closed voice configuration (daijro/camoufox#731) ────────────────────
+# ── Fail-closed voice configuration ────────────────────
 #
 # nsSynthVoiceRegistry only withholds the host's speech-dispatcher / SAPI /
 # NSSpeech voices while Veyra owns the list. An empty or unset `voices`

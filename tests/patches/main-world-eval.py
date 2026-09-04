@@ -1,5 +1,5 @@
 """
-Verify the `mw:` main-world escape hatch (daijro/camoufox#631).
+Verify the `mw:` main-world escape hatch.
 
 page.evaluate() runs in an isolated world (tests/patches/isolated-evaluate.py),
 so the page's own JS state is invisible to it. `main_world_eval=True` plus a

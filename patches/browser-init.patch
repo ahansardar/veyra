@@ -98,7 +98,7 @@ index 1cfa4b8497..bdf8d7202e 100644
 +    // here -- it must not be pinned. Pinning documentElement to the spoofed size
 +    // caps .browserStack, which caps the content viewport, which makes Juggler's
 +    // awaitViewportDimensions handshake unsatisfiable for any larger viewport.
-+    // That await has no timeout, so it hangs forever (daijro/camoufox#666).
++    // That await has no timeout, so it hangs forever.
 +    let outerWidth, outerHeight;
 +    if ((outerWidth = ChromeUtils.veyraGetInt("window.outerWidth"))) {
 +      window.resizeTo(outerWidth, window.outerHeight);

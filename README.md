@@ -116,7 +116,7 @@ Below is a list of patches and features implemented in Veyra.
 - Avoids main world execution leaks. All page agent javascript is sandboxed
 - Avoids frame execution context leaks
 - Fixes `navigator.webdriver` detection
-- Fixes Firefox headless detection via pointer type ([#26](https://github.com/daijro/camoufox/issues/26))
+- Fixes Firefox headless detection via pointer type
 - Removed potentially leaking anti-zoom/meta viewport handling patches
 - Uses non-default screen & window sizes
 - Re-enable fission content isolations

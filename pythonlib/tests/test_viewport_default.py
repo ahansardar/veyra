@@ -1,4 +1,4 @@
-"""Driver-side guard for daijro/camoufox#666.
+"""Driver-side guard for a Juggler resize deadlock.
 
 Playwright's implicit 1280x720 viewport makes Juggler ask a spoofed window to
 resize to a size it can never reach, deadlocking new_page(). The driver defaults

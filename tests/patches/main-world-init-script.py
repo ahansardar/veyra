@@ -1,5 +1,5 @@
 """
-Verify the `mw:` main-world escape hatch for init scripts (daijro/camoufox#738).
+Verify the `mw:` main-world escape hatch for init scripts.
 
 add_init_script() lands in the default world, which since the isolated-world
 change (#707) is a sandbox the page cannot see. A script installed that way to

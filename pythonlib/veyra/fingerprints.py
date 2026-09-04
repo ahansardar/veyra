@@ -419,7 +419,7 @@ def clamp_screen_to_display(
     So the bound from get_screen_cons() is best-effort only, and a 1366x768
     laptop routinely gets a 2560x1440 fingerprint. browser-init.patch resizes the
     real chrome window to window.outerWidth/outerHeight, so an unbounded value
-    renders past the edge of the monitor (daijro/camoufox#499).
+    renders past the edge of the monitor.
 
     Keeps the taskbar delta (screen - avail) intact so fix_screen_no_taskbar's
     invariant survives. Callers must run clamp_window_dimensions afterwards to

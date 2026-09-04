@@ -881,7 +881,7 @@ index e41408f51c..ffa0bd4caf 100644
 +    // where layout placed it and detaches every combining mark from its base.
 +    // Scripts whose marks carry a zero advance -- Thai, Lao, Arabic,
 +    // Devanagari, Hebrew -- collapse into stacked glyphs, while Latin merely
-+    // looks slightly loose (daijro/camoufox#741).
++    // looks slightly loose.
 +    //
 +    // Zero-advance glyphs are skipped for the same reason: a combining mark is
 +    // not a separate character, and widening it pushes the following base away

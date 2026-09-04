@@ -4,7 +4,7 @@ Tests for the WebGL <-> screen coherence helpers in veyra.fingerprints.
 Run with:
     cd pythonlib && python -m pytest tests/test_webgl_screen_consistency.py -v
 
-The regression these guard (daijro/camoufox#729): BrowserForge picks the
+The regression these guard: BrowserForge picks the
 screen, webgl_data.db picks the GPU, and nothing ties them together -- so the
 synthetic path can emit pairs no real machine ships (a discrete GPU behind a
 1024x600 netbook panel).
