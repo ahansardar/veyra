@@ -533,7 +533,11 @@ ApplicationWindow {
                     spacing: s3
 
                     Repeater {
-                        model: ["Browsers", "GeoIP", "Info"]
+                        model: [
+                            { label: "Browsers", glyph: "" },
+                            { label: "GeoIP", glyph: "" },
+                            { label: "Info", glyph: "" }
+                        ]
 
                         Column {
                             spacing: 3
@@ -546,6 +550,13 @@ ApplicationWindow {
                                 color: tabs.currentIndex === index ? Qt.rgba(c.accent.r, c.accent.g, c.accent.b, 0.18) : (railMa.containsMouse ? c.raised : "transparent")
                                 border.width: tabs.currentIndex === index ? 1 : 0
                                 border.color: c.accent
+
+                                Icon {
+                                    anchors.centerIn: parent
+                                    icon: modelData.glyph
+                                    font.pixelSize: Math.round(16 * scale)
+                                    color: tabs.currentIndex === index ? c.accent : c.muted
+                                }
 
                                 MouseArea {
                                     id: railMa
@@ -562,7 +573,7 @@ ApplicationWindow {
                                 font.pixelSize: Math.round(9 * scale)
                                 font.weight: tabs.currentIndex === index ? Font.DemiBold : Font.Normal
                                 color: tabs.currentIndex === index ? c.accent : c.dim
-                                text: modelData
+                                text: modelData.label
                             }
                         }
                     }
