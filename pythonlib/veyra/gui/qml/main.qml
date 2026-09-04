@@ -508,52 +508,70 @@ ApplicationWindow {
         anchors.fill: parent
         spacing: 0
 
-        // Tab bar
-        Rectangle {
+        RowLayout {
             Layout.fillWidth: true
-            height: row
-            color: c.fg
+            Layout.fillHeight: true
+            spacing: 0
 
-            Rule { anchors.bottom: parent.bottom }
+            // Left navigation rail — replaces the old top tab bar.
+            Rectangle {
+                Layout.preferredWidth: Math.round(68 * scale)
+                Layout.fillHeight: true
+                color: c.fg
 
-            Row {
-                anchors.left: parent.left
-                anchors.leftMargin: s3
-                anchors.verticalCenter: parent.verticalCenter
+                Rectangle {
+                    anchors.right: parent.right
+                    width: 1
+                    height: parent.height
+                    color: c.border
+                }
 
-                spacing: s2
+                Column {
+                    anchors.top: parent.top
+                    anchors.topMargin: s3
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    spacing: s3
 
-                Repeater {
-                    model: ["Browsers", "GeoIP", "Info"]
+                    Repeater {
+                        model: ["Browsers", "GeoIP", "Info"]
 
-                    Rectangle {
-                        width: tabLbl.width + s4 * 2
-                        height: row - s2
-                        anchors.verticalCenter: parent.verticalCenter
-                        radius: radiusMd
-                        color: tabs.currentIndex === index ? Qt.rgba(c.accent.r, c.accent.g, c.accent.b, 0.16) : "transparent"
+                        Column {
+                            spacing: 3
 
-                        T {
-                            id: tabLbl
-                            anchors.centerIn: parent
-                            text: modelData
-                            font.weight: tabs.currentIndex === index ? Font.DemiBold : Font.Normal
-                            color: tabs.currentIndex === index ? c.accent : c.muted
-                        }
+                            Rectangle {
+                                width: Math.round(44 * scale)
+                                height: Math.round(36 * scale)
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                radius: radiusMd
+                                color: tabs.currentIndex === index ? Qt.rgba(c.accent.r, c.accent.g, c.accent.b, 0.18) : (railMa.containsMouse ? c.raised : "transparent")
+                                border.width: tabs.currentIndex === index ? 1 : 0
+                                border.color: c.accent
 
-                        MouseArea {
-                            anchors.fill: parent
-                            cursorShape: Qt.PointingHandCursor
-                            onClicked: tabs.currentIndex = index
+                                MouseArea {
+                                    id: railMa
+                                    anchors.fill: parent
+                                    hoverEnabled: true
+                                    cursorShape: Qt.PointingHandCursor
+                                    onClicked: tabs.currentIndex = index
+                                }
+                            }
+
+                            T {
+                                width: Math.round(64 * scale)
+                                horizontalAlignment: Text.AlignHCenter
+                                font.pixelSize: Math.round(9 * scale)
+                                font.weight: tabs.currentIndex === index ? Font.DemiBold : Font.Normal
+                                color: tabs.currentIndex === index ? c.accent : c.dim
+                                text: modelData
+                            }
                         }
                     }
                 }
             }
-        }
 
-        RowLayout {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
             spacing: 0
 
             // Sidebar
@@ -1325,6 +1343,7 @@ ApplicationWindow {
                     }
                 }
             }
+        }
         }
 
         // Status bar
